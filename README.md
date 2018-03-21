@@ -7,12 +7,12 @@ Sending too many messages to others at once can crash recipients devices. I am n
 This project is a simple python script that simulates keyboard presses to spam repeated messages through any message-sending computer application.
 It allows you to define a message to send or to send the contents of your computer's clipboard, as well as a number of times to send the message and how long to wait in between each one.
 
-## Install
+## Install it
 To run the bot, you must have Python installed, as well as the pyautogui library. You can install that dependency with
 ```
 pip install pyautogui
 ```
-## Run
+## Run it
 After that just navigate to the directory where you saved the script and run it, it will prompt you for the rest of the information.
 ```
 python spammer.py
