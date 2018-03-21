@@ -12,9 +12,10 @@ To run the bot, you must have Python installed, as well as the pyautogui library
 ```
 pip install pyautogui
 ```
-
+## Run
 After that just navigate to the directory where you saved the script and run it, it will prompt you for the rest of the information.
 ```
 python spammer.py
 ```
 It will prompt you to open your messaging app and focus the textbox where messages are inputted, and to press Enter when you are ready to begin. Once you press enter, you will have a few seconds to refocus the textbox before the bot will begin typing.
+
