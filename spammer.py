@@ -1,27 +1,29 @@
 #!/usr/bin/python
 import pyautogui
-import webbrowser
+import random
 import time
 
-message = input("What message do you want to keep sending? (Leave this blank if you want to paste your clipboard)  ")
-repeats = int(input("How many times do you want to send the message?  "))
 delay = int(input("How many milliseconds do you want to wait in between each message?  "))
+messages = open(input("What file with the messages do you want to open up?  ")).readlines()
 
-isLoaded = input("Press Enter when your messaging app is loaded up.")
-
-
-
-print("You have five seconds to refocus the text input area of your messaging app")
+input("Press Enter when your messaging app is loaded up.")
+print("Hover your mouse over the top left corner to toggle spamming.")
+print("Press Ctrl-C in this window to stop.")
+print("You have five seconds to refocus the text input area of your messaging app.")
 
 time.sleep(5)
 
+spam = True
+pyautogui.FAILSAFE = False
 
-for i in range(0,repeats):         #Message sending loop
-	if message != "":
-		pyautogui.typewrite(message)     
-		pyautogui.press("enter")
-	else:
-		pyautogui.hotkey('ctrl', 'v')      
+while True:         #Message sending loop
+	if pyautogui.position()[0] < 50 and pyautogui.position()[1] < 50:
+		while pyautogui.position()[0] < 50 and pyautogui.position()[1] < 50:
+			pass
+		spam = False
+	
+	if spam:
+		pyautogui.typewrite(random.choice(messages))     
 		pyautogui.press("enter")
 
 	time.sleep(delay/1000)
